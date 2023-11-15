@@ -1,0 +1,17 @@
+body {
+    padding: 100px;
+    margin: 100px;
+}
+
+#grid {
+    display: flex;
+    width: 400px;
+    height: 300px;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+}
+
+img {
+    width: 50%;
+    height: 50%;
+}
