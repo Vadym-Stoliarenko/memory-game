@@ -6,18 +6,18 @@ class Card {
   }
   
     const cardArray = [
-    new Card("12", "images/12.png"),
-    new Card("dog", "images/dog.jpeg"),
-    new Card("duck", "images/duck.png"),
-    new Card("ice-cream", "images/ice-cream.png"),
-    new Card("melon", "images/melon.jpg"),
-    new Card("pikachu", "images/pikachu.png"),
-    new Card("12", "images/12.png"),
-    new Card("dog", "images/dog.jpeg"),
-    new Card("duck", "images/duck.png"),
-    new Card("ice-cream", "images/ice-cream.png"),
-    new Card("melon", "images/melon.jpg"),
-    new Card("pikachu", "images/pikachu.png"),
+    new Card("1", "images/1.jpg"),
+    new Card("2", "images/2.jpg"),
+    new Card("3", "images/3.jpg"),
+    new Card("4", "images/4.jpg"),
+    new Card("5", "images/5.jpg"),
+    new Card("6", "images/6.jpg"),
+    new Card("1", "images/1.jpg"),
+    new Card("2", "images/2.jpg"),
+    new Card("3", "images/3.jpg"),
+    new Card("4", "images/4.jpg"),
+    new Card("5", "images/5.jpg"),
+    new Card("6", "images/6.jpg"),
   ];
 
 cardArray.sort(() => 0.5 - Math.random());
@@ -37,7 +37,7 @@ let gameActive = false;
 function createBoard() {
   for (let i = 0; i < cardArray.length; i++) {
     const cardElement = document.createElement("img");
-    cardElement.src = "images/background.jpg";
+    cardElement.src = "images/001.jpg";
     cardElement.setAttribute("data-id", i);
     cardElement.addEventListener("click", flipCard);
     gridDisplay.appendChild(cardElement);
@@ -98,20 +98,20 @@ function checkMatch() {
   const optionOneId = cardsChosenIds[0];
   const optionTwoId = cardsChosenIds[1];
   if (optionOneId == optionTwoId) {
-    cards[optionOneId].setAttribute("src", "images/background.jpg");
-    cards[optionTwoId].setAttribute("src", "images/background.jpg");
+    cards[optionOneId].setAttribute("src", "images/001.jpg");
+    cards[optionTwoId].setAttribute("src", "images/001.jpg");
     console.log("You have clicked the same image!");
   }
   if (cardsChosen[0] == cardsChosen[1]) {
     console.log("You found a match");
-    cards[optionOneId].setAttribute("src", "images/fon.jpg");
-    cards[optionTwoId].setAttribute("src", "images/fon.jpg");
+    cards[optionOneId].setAttribute("src", "images/002.jpg");
+    cards[optionTwoId].setAttribute("src", "images/002.jpg");
     cards[optionOneId].removeEventListener("click", flipCard);
     cards[optionTwoId].removeEventListener("click", flipCard);
     cardsWon.push(cardsChosen);
   } else {
-    cards[optionOneId].setAttribute("src", "images/background.jpg");
-    cards[optionTwoId].setAttribute("src", "images/background.jpg");
+    cards[optionOneId].setAttribute("src", "images/001.jpg");
+    cards[optionTwoId].setAttribute("src", "images/001.jpg");
     console.log("Sorry try again!");
   }
   resultDisplay.textContent = cardsWon.length;
@@ -138,7 +138,7 @@ function flipCard() {
     return; // Якщо гра не активована, вийдіть з функції
   }
   if (cardsChosenIds.length === 1 && cardsChosenIds[0] === cardId) {
-    this.setAttribute("src", "images/background.jpg");
+    this.setAttribute("src", "images/001.jpg");
     cardsChosen = [];
     cardsChosenIds = [];
     return;
@@ -171,9 +171,9 @@ document.getElementById("startButton").addEventListener("mouseover", function() 
 });
 
 document.getElementById("startButton").addEventListener("mouseout", function() {
-  this.style.backgroundColor = "#9d36f2";
-  this.style.color = "#43ff0f";
-  this.style.border = "3px solid #f915f9";
+  this.style.backgroundColor = "#b0b0b5";
+  this.style.color = "#3e3ec1";
+  this.style.border = "3px solid #46467c";
 });
 
 
@@ -184,9 +184,9 @@ document.getElementById("resetGame").addEventListener("mouseover", function() {
 });
 
 document.getElementById("resetGame").addEventListener("mouseout", function() {
-  this.style.backgroundColor = "#9d36f2";
-  this.style.color = "#43ff0f";
-  this.style.border = "3px solid #f915f9";
+  this.style.backgroundColor = "#b0b0b5";
+  this.style.color = "#3e3ec1";
+  this.style.border = "3px solid #46467c";
 });
 document.getElementById("startButton").addEventListener("click", function() {
   if (!gameActive) {
